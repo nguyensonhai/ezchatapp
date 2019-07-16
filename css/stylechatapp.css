@@ -32,11 +32,12 @@ input[type= email], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
   
 input[type= email]:focus, input[type=password]:focus {
   width: 90%;
-  transition: 0.5s;
   background-color: #31396a;
   color: white;
   margin: 15px 0;
@@ -50,12 +51,13 @@ input[type= submit] {
   border: none;
   cursor: pointer;
   width: 80%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 input[type= submit]:hover{
     background-color: black; 
     width: 90%;   
-    transition: 0.5s;
     margin: 8px 0;
 }
   
