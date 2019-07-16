@@ -65,7 +65,7 @@ input[type= submit]:hover{
 }
 
 .animationload {
-  background-color:rgba(0,0,0,0.0);
+  background-color:white;
   height: 100%;
   left: 0;
   position: fixed;
