@@ -9,11 +9,18 @@
 }
 
 .error-message {
+    color: red;
     margin: 0 20px;
 }
 
-span{
+a {
   margin: 0 20px;
+  text-decoration: none;
+  color: #31396a;
+}
+
+a:hover {
+  color: red;
 }
 
 img.logo {
@@ -36,14 +43,14 @@ input[type= email]:focus, input[type=password]:focus {
   width: 90%;
   background-color: #31396a;
   color: white;
-  margin: 15px 0;
+  margin: 5px 0;
 }
 
 input[type= submit] {
   background-color: #31396a;
   color: white;
   padding: 14px 20px;
-  margin: 8px 20px;
+  margin: 5px 20px;
   border: none;
   cursor: pointer;
   width: 80%;
@@ -54,6 +61,6 @@ input[type= submit] {
 input[type= submit]:hover{
     background-color: #f6a6a7; 
     width: 90%;   
-    margin: 15px 0;
+    margin: 5px 0;
 }
   

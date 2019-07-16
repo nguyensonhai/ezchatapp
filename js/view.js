@@ -30,7 +30,6 @@ view.setActiveScreen = (screenName) => {
             if (app) {
                 app.innerHTML = components.registerPage;
             }
-
             // listen link click
             const loginLink = document.getElementById("login-link");
             if (loginLink) {
@@ -38,6 +37,24 @@ view.setActiveScreen = (screenName) => {
                 view.setActiveScreen('loginPage');
                 });
             }
+
+            const registerForm = document.getElementById("register-form");
+            console.log(registerForm);
+            if (registerForm) {
+                //listen submit
+                registerForm.addEventListener("submit", (event) => {
+                    event.preventDefault();
+
+                    const firstName = registerForm.firstName.value;
+                    const lastName = registerForm.lastName.value;
+                    const email = registerForm.email.value;
+                    const password = registerForm.password.value;
+                    const confirmPassword = registerForm.confirmPassword.value;
+
+                    controller.validateRegisterInfo(firstName, lastName, email, password, confirmPassword);
+                });
+            }
+            break;
     }
 }
 
