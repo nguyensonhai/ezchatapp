@@ -5,12 +5,18 @@
 
 .register-form-container{
     margin-left: 65%;
-    padding-top: 100px;
+    padding-top: 50px;
     background-color: white;
     opacity: 0.8;
     width: 35%;
     height:100vh;
     padding-left: 40px;
+}
+
+img.logo-register {
+  width: 90%;
+  border-radius: 0%;
+  padding-bottom: 61px;
 }
 
 input[type= text] {

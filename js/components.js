@@ -33,6 +33,7 @@ components.registerPage = `
 <div class="app" id="register-screen">
     <div id="register-form-container" class="register-form-container">
         <form id="register-form">
+            <img src="../images/register.png" alt="logo" class="logo-register">
             <div class="name">
                 <input type="text" id="firstName" placeholder="Fisrt Name" />
                 <input type="text" id="lastName" placeholder="Last Name" />
