@@ -1,0 +1,32 @@
+.name {
+    display: flex;
+    align-items: stretch;
+}
+
+.register-form-container{
+    margin-left: 65%;
+    padding-top: 100px;
+    background-color: white;
+    opacity: 0.8;
+    width: 35%;
+    height:100vh;
+    padding-left: 40px;
+}
+
+input[type= text] {
+    width: 35%;
+    padding: 12px 20px;
+    margin: 5px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+input[type= text]:focus {
+  width: 50%;
+  background-color: #31396a;
+  color: white;
+  margin: 15px 0;
+}

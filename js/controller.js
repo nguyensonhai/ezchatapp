@@ -17,4 +17,10 @@ controller.validateLoginInfo = (email, password) => {
     } else {
         view.renderErrorMessage("password-error-message","")
     }
+
+    // check database
+    if( email && password){
+        // call model => check database
+        model.loginUser(email,password);
+    }
 };

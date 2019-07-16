@@ -1,4 +1,4 @@
 window.onload = () => {
-    // show welcomePage
-    view.setActiveScreen();
+    // show loginPage
+    view.setActiveScreen("loginPage");
 };
