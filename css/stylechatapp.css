@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-position: center center center center;
+}
+
+.login-form-container{
+    margin-left: 65%;
+    background-color: white;
+    opacity: 0.8;
+    width: 35%;
+    height:100vh;
+    padding-left: 40px;
+}
+p{
+  margin: 15px 20px;
+}
+img.logo {
+    width: 90%;
+    border-radius: 50%;
+  }
+
+input[type= email], input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 15px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+input[type= email]:focus, input[type=password]:focus {
+  width: 90%;
+  transition: 0.5s;
+  background-color: #31396a;
+  color: white;
+  margin: 15px 0;
+}
+
+input[type= submit] {
+  background-color: #31396a;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 20px;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+}
+
+input[type= submit]:hover{
+    background-color: black; 
+    width: 90%;   
+    transition: 0.5s;
+    margin: 8px 0;
+}
+  

@@ -1,0 +1,5 @@
+const components = {};
+
+components.welcomePage = `
+
+`;
