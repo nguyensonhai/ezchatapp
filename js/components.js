@@ -34,7 +34,7 @@ components.registerPage = `
     <div id="register-form-container" class="register-form-container">
         <form id="register-form">
             <div class="name">
-                <input type="text" id="fisrtName" placeholder="Fisrt Name" />
+                <input type="text" id="firstName" placeholder="Fisrt Name" />
                 <input type="text" id="lastName" placeholder="Last Name" />
             </div>
             <div class="error-message" id="name-error-message">&nbsp;</div>
@@ -49,7 +49,7 @@ components.registerPage = `
             </div>
 
             <div>
-                <input type="password" name="confirm-password" placeholder="Confirm Password" />
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" />
                 <div class="error-message" id="confirm-password-error-message">&nbsp;</div>
             </div>
                 <div>

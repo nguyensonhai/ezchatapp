@@ -25,8 +25,11 @@ controller.validateLoginInfo = (email, password) => {
 };
 
 controller.validateRegisterInfo = (firstName, lastName, email, password, confirmPassword) => {
+
     if (!lastName || !firstName) {
-        view.renderErrorMessage("name-error-mesage","Please enter your First Name and Last Name");
+        view.renderErrorMessage("name-error-message","Please enter your First Name and Last Name");
+    } else {
+        view.renderErrorMessage("name-error-message","");
     }
     
     if (!email) {        

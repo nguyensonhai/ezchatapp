@@ -9,7 +9,7 @@ view.setActiveScreen = (screenName) => {
             const registerLink = document.getElementById("register-link");
             if (registerLink) {
                 registerLink.addEventListener("click", (event) => {
-                view.setActiveScreen('registerPage');
+                    view.setActiveScreen('registerPage');
                 });
             }
             const loginForm = document.getElementById("login-form");
@@ -34,7 +34,7 @@ view.setActiveScreen = (screenName) => {
             const loginLink = document.getElementById("login-link");
             if (loginLink) {
                 loginLink.addEventListener("click", (event) => {
-                view.setActiveScreen('loginPage');
+                    view.setActiveScreen('loginPage');
                 });
             }
 
