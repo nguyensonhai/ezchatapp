@@ -17,9 +17,15 @@ body {
     height:100vh;
     padding-left: 40px;
 }
-p{
-  margin: 15px 20px;
+
+.error-message {
+    margin: 0 20px;
 }
+
+p{
+  margin: 0 20px;
+}
+
 img.logo {
     width: 90%;
     border-radius: 50%;
@@ -28,7 +34,7 @@ img.logo {
 input[type= email], input[type=password] {
     width: 80%;
     padding: 12px 20px;
-    margin: 15px 20px;
+    margin: 5px 20px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -58,6 +64,6 @@ input[type= submit] {
 input[type= submit]:hover{
     background-color: #f6a6a7; 
     width: 90%;   
-    margin: 8px 0;
+    margin: 15px 0;
 }
   
