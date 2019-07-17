@@ -115,10 +115,10 @@ view.clearResetInfo = () =>{
 view.clearRegisterInfo = () => {
     const registerForm = document.getElementById("register-form");
     if (registerForm) {
-        registerForm.firstName.value = " ";
-        registerForm.lastName.value = " ";
-        registerForm.email.value = " ";
-        registerForm.password.value = " ";
-        registerForm.confirmPassword.value = " ";
+        registerForm.firstName.value = "";
+        registerForm.lastName.value = "";
+        registerForm.email.value = "";
+        registerForm.password.value = "";
+        registerForm.confirmPassword.value = "";
     }
 };
