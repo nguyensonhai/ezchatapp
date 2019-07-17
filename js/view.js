@@ -7,11 +7,18 @@ view.setActiveScreen = (screenName) => {
                 app.innerHTML = components.loginPage;
             }
             const registerLink = document.getElementById("register-link");
+            const resetPasswordLink = document.getElementById("reset-password-link");
             if (registerLink) {
                 registerLink.addEventListener("click", (event) => {
                     view.setActiveScreen('registerPage');
                 });
             }
+            if (resetPasswordLink) {
+                resetPasswordLink.addEventListener("click", (event) => {
+                    view.setActiveScreen('resetPasswordPage');
+                });
+            }
+
             const loginForm = document.getElementById("login-form");
             console.log(loginForm);
             if (loginForm) {
@@ -59,6 +66,34 @@ view.setActiveScreen = (screenName) => {
             if (app) {
                 app.innerHTML = components.chatPage;
             }
+            break;
+        case "resetPasswordPage":
+            if (app) {
+                app.innerHTML = components.resetPasswordPage;
+            }
+            const loginLinkBack = document.getElementById("login-link");
+            const registerLinkBack = document.getElementById("register-link");
+            if (loginLinkBack) {
+                loginLinkBack.addEventListener("click", (event) => {
+                    view.setActiveScreen("loginPage");
+                });
+
+            }
+            if (registerLinkBack) {
+                registerLinkBack.addEventListener("click", (event) => {
+                    view.setActiveScreen("registerPage")
+                });
+            }
+            const resetPasswordForm = document.getElementById("reset-password-form");
+            console.log(resetPasswordForm);
+            if(resetPasswordForm) {
+                resetPasswordForm.addEventListener("submit", (event) =>{
+                    event.preventDefault();
+                    const email = resetPasswordForm.email.value;
+                    controller.resetPassword(email);
+                });
+            }
+            break;
     }
 }
 

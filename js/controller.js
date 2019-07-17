@@ -64,3 +64,13 @@ controller.validateRegisterInfo = (firstName, lastName, email, password, confirm
         );
     }
 };
+
+controller.resetPassword = (email) => {
+    if (!email) {        
+        view.renderErrorMessage("email-error-message","Enter your Email Address");
+    } else if (!emailRegex.test(email)) {
+        view.renderErrorMessage("email-error-message","Invalid Email Address");
+    } else {
+        model.resetPassword(email);
+    }
+};

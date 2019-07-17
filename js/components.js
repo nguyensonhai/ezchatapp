@@ -18,7 +18,8 @@ components.loginPage = `
         <div>
             <div>
                 <br>
-                <a href="#"  id="register-link">Don't have an account? Register</a><br>
+                <a href="#"  id="register-link">Don't have an account? Register.</a><br><br>
+                <a href="#" id="reset-password-link">Forgot your password? Reset Password.</a><br>
                 <br>
                 <input type="submit" value="Log In" />
                 <br>
@@ -55,7 +56,7 @@ components.registerPage = `
             </div>
                 <div>
                     <br>
-                    <a href="#" id="login-link">Already have an account? Log In</a><br>
+                    <a href="#" id="login-link">Already have an account? Log In.</a><br><br>
                     <br>
                     <input type="submit" value="Register" />
                     <br>
@@ -65,8 +66,34 @@ components.registerPage = `
 </div>
 `;
 
+components.resetPasswordPage = `
+<div class="app" id="reset-password-screen">
+<div id="reset-password-form-container" class="login-form-container">
+    <form id="reset-password-form">
+        <img src="../images/reset-password.png" alt="logo" class="reset-password">
+        <div>
+            <input type="email" name="email" placeholder="Email Address" />
+            <div class="error-message" id="email-error-message"></div>
+        </div>
+
+
+        <div>
+            <div>
+                <br>
+                <a href="#" id="register-link">Don't have an account? Register.</a><br><br>
+                <a href="#" id="login-link">Already have an account? Log In.</a><br><br>
+                <br>
+                <input type="submit" value="Reset Password" />
+                <br>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+`;
+
 components.chatPage = `
 <div id="animationload" class="animationload">
         <div id="osahanloading" class="osahanloading"></div>
     </div>
-`
+`;

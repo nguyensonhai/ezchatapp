@@ -1,11 +1,18 @@
 const model = {};
 
+model.loggedUser = undefined;
+
 model.loginUser = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((loginResult) => {
         //check emailVerified
         if (loginResult.user.emailVerified) {
              //login success
+             model.loggedUser = {
+                 id: loginResult.user.id,
+                 displayName: loginResult.user.displayName,
+                 email: loginResult.user.email
+             }
              view.setActiveScreen("chatPage");
         } else {
             window.alert("Your Email must be verified, check your Email.")
@@ -25,13 +32,13 @@ model.createNewUser = (
     password
 ) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((registerRusult) => {
+    .then((registerResult) => {
         //update displayNAme
-        registerRusult.user.updateProfile({
+        registerResult.user.updateProfile({
             displayName: `${fisrtName} ${lastName}`
         });
         //sendVerifyEmail
-        registerRusult.user.sendEmailVerification();
+        registerResult.user.sendEmailVerification();
         window.alert("Register successful, check your Email.");
         view.setActiveScreen("loginPage");
     })
@@ -44,5 +51,18 @@ model.createNewUser = (
           alert(errorMessage);
         }
         console.log(error);
+    });
+};
+
+model.resetPassword = (email) => {
+    firebase.auth().sendPasswordResetEmail(email)
+    .then((resetResult) => {
+        window.alert("Request reset password successful, check your Email")
+        view.setActiveScreen("loginPage");
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
     });
 };
