@@ -64,3 +64,9 @@ components.registerPage = `
     </div>
 </div>
 `;
+
+components.chatPage = `
+<div id="animationload" class="animationload">
+        <div id="osahanloading" class="osahanloading"></div>
+    </div>
+`

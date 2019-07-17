@@ -55,6 +55,10 @@ view.setActiveScreen = (screenName) => {
                 });
             }
             break;
+        case "chatPage":
+            if (app) {
+                app.innerHTML = components.chatPage;
+            }
     }
 }
 
