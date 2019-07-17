@@ -53,6 +53,8 @@ components.registerPage = `
             <div>
                 <input type="password" name="confirmPassword" placeholder="Confirm Password" />
                 <div class="error-message" id="confirm-password-error-message"></div>
+                <div class="error-message" id="error-message"></div>
+                <div class="success-message" id="success-message"></div>
             </div>
                 <div>
                     <br>
@@ -74,8 +76,8 @@ components.resetPasswordPage = `
         <div>
             <input type="email" name="email" placeholder="Email Address" />
             <div class="error-message" id="email-error-message"></div>
+            <div class="success-message" id="success-message"></div>
         </div>
-
 
         <div>
             <div>

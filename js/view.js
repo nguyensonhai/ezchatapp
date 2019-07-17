@@ -68,6 +68,7 @@ view.setActiveScreen = (screenName) => {
             }
             break;
         case "resetPasswordPage":
+            view.renderErrorMessage("success-message", "");
             if (app) {
                 app.innerHTML = components.resetPasswordPage;
             }
@@ -104,13 +105,20 @@ view.renderErrorMessage = (elementID, errorMessage) => {
     }
 };
 
+view.clearResetInfo = () =>{
+    const resetForm = document.getElementById("reset-password-form");
+    if(resetForm) {
+        resetForm.email.value = "";
+    }
+}
+
 view.clearRegisterInfo = () => {
     const registerForm = document.getElementById("register-form");
     if (registerForm) {
         registerForm.firstName.value = " ";
-        registerForm.firstName.value = " ";
-        registerForm.firstName.value = " ";
-        registerForm.firstName.value = " ";
-        registerForm.firstName.value = " ";
+        registerForm.lastName.value = " ";
+        registerForm.email.value = " ";
+        registerForm.password.value = " ";
+        registerForm.confirmPassword.value = " ";
     }
 };

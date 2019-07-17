@@ -15,13 +15,15 @@ model.loginUser = (email, password) => {
              }
              view.setActiveScreen("chatPage");
         } else {
-            window.alert("Your Email must be verified, check your Email.")
+            view.renderErrorMessage("password-error-message", "Your Email must be verified, check your Email.");
+            /* window.alert("Your Email must be verified, check your Email."); */
         }
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        window.alert(errorMessage);
+        view.renderErrorMessage("password-error-message", errorMessage);
+        /* window.alert(errorMessage); */
     });
 };
 
@@ -39,16 +41,22 @@ model.createNewUser = (
         });
         //sendVerifyEmail
         registerResult.user.sendEmailVerification();
-        window.alert("Register successful, check your Email.");
-        view.setActiveScreen("loginPage");
+        view.renderErrorMessage("success-message", "Register successful, check your Email");
+        view.renderErrorMessage("error-message", "");
+        /* window.alert("Register successful, check your Email.");
+        view.setActiveScreen("loginPage"); */
+        view.clearRegisterInfo();
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
+            view.renderErrorMessage("error-message", "The password is too weak..");
+          /* alert('The password is too weak.'); */
         } else {
-          alert(errorMessage);
+            view.renderErrorMessage("error-message", errorMessage);
+           
+          /* alert(errorMessage); */
         }
         console.log(error);
     });
@@ -57,12 +65,16 @@ model.createNewUser = (
 model.resetPassword = (email) => {
     firebase.auth().sendPasswordResetEmail(email)
     .then((resetResult) => {
-        window.alert("Request reset password successful, check your Email")
-        view.setActiveScreen("loginPage");
+        view.renderErrorMessage("success-message", "Your request accepted, check your Email.");
+        view.renderErrorMessage("email-error-message", "");
+        view.clearResetInfo();
+  /*       window.alert("Request reset password successful, check your Email") */
+        /* view.setActiveScreen("loginPage"); */
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        view.renderErrorMessage("email-error-message", errorMessage);
+        /* alert(errorMessage); */
     });
 };

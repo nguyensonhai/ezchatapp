@@ -26,6 +26,7 @@ controller.validateLoginInfo = (email, password) => {
 
 controller.validateRegisterInfo = (firstName, lastName, email, password, confirmPassword) => {
 
+    view.renderErrorMessage("success-message", "");
     if (!lastName || !firstName) {
         view.renderErrorMessage("name-error-message","Enter your First Name and Last Name");
     } else {
@@ -68,8 +69,10 @@ controller.validateRegisterInfo = (firstName, lastName, email, password, confirm
 controller.resetPassword = (email) => {
     if (!email) {        
         view.renderErrorMessage("email-error-message","Enter your Email Address");
+        view.renderErrorMessage("success-message", "");
     } else if (!emailRegex.test(email)) {
         view.renderErrorMessage("email-error-message","Invalid Email Address");
+        view.renderErrorMessage("success-message", "");
     } else {
         model.resetPassword(email);
     }
