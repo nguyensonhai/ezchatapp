@@ -53,4 +53,14 @@ controller.validateRegisterInfo = (firstName, lastName, email, password, confirm
     } else{
         view.renderErrorMessage("confirm-password-error-message","");
     }
+
+    if (firstName && lastName && emailRegex.test(email) && password && confirmPassword === password){
+        // call model => save user to database
+        model.createNewUser(
+            firstName,
+            lastName,
+            email,
+            password
+        );
+    }
 };

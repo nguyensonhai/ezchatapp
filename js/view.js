@@ -64,3 +64,14 @@ view.renderErrorMessage = (elementID, errorMessage) => {
         element.innerText = errorMessage;
     }
 };
+
+view.clearRegisterInfo = () => {
+    const registerForm = document.getElementById("register-form");
+    if (registerForm) {
+        registerForm.firstName.value = " ";
+        registerForm.firstName.value = " ";
+        registerForm.firstName.value = " ";
+        registerForm.firstName.value = " ";
+        registerForm.firstName.value = " ";
+    }
+};

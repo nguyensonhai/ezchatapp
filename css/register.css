@@ -16,13 +16,14 @@
 img.logo-register {
   width: 90%;
   border-radius: 0%;
-  padding-bottom: 61px;
+  padding-top: 17px;
+  padding-bottom: 60px;
 }
 
 input[type= text] {
     width: 35%;
     padding: 12px 20px;
-    margin: 5px 20px;
+    margin: 10px 20px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -34,5 +35,5 @@ input[type= text]:focus {
   width: 50%;
   background-color: #31396a;
   color: white;
-  margin: 5px 0;
+  margin: 10px 0;
 }

@@ -7,12 +7,12 @@ components.loginPage = `
         <img src="../images/chat-logo.png" alt="logo" class="logo">
         <div>
             <input type="email" name="email" placeholder="Email Address" />
-            <div class="error-message" id="email-error-message">&nbsp;</div>
+            <div class="error-message" id="email-error-message"></div>
         </div>
 
         <div>
             <input type="password" name="password" placeholder="Password" />
-            <div class="error-message" id="password-error-message">&nbsp;</div>
+            <div class="error-message" id="password-error-message"></div>
         </div>
 
         <div>
@@ -38,20 +38,20 @@ components.registerPage = `
                 <input type="text" id="firstName" placeholder="Fisrt Name" />
                 <input type="text" id="lastName" placeholder="Last Name" />
             </div>
-            <div class="error-message" id="name-error-message">&nbsp;</div>
+            <div class="error-message" id="name-error-message"></div>
             <div>
                 <input type="email" name="email" placeholder="Email Address" />
-                <div class="error-message" id="email-error-message">&nbsp;</div>
+                <div class="error-message" id="email-error-message"></div>
             </div>
 
             <div>
                 <input type="password" name="password" placeholder="Password" />
-                <div class="error-message" id="password-error-message">&nbsp;</div>
+                <div class="error-message" id="password-error-message"></div>
             </div>
 
             <div>
                 <input type="password" name="confirmPassword" placeholder="Confirm Password" />
-                <div class="error-message" id="confirm-password-error-message">&nbsp;</div>
+                <div class="error-message" id="confirm-password-error-message"></div>
             </div>
                 <div>
                     <br>

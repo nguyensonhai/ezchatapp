@@ -31,7 +31,7 @@ img.logo {
 input[type= email], input[type=password] {
     width: 80%;
     padding: 12px 20px;
-    margin: 5px 20px;
+    margin: 10px 20px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -43,14 +43,14 @@ input[type= email]:focus, input[type=password]:focus {
   width: 90%;
   background-color: #31396a;
   color: white;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 input[type= submit] {
   background-color: #31396a;
   color: white;
   padding: 14px 20px;
-  margin: 5px 20px;
+  margin: 10px 20px;
   border: none;
   cursor: pointer;
   width: 80%;
@@ -61,7 +61,7 @@ input[type= submit] {
 input[type= submit]:hover{
     background-color: #f6a6a7; 
     width: 90%;   
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .animationload {
