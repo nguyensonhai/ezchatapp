@@ -65,6 +65,26 @@ view.setActiveScreen = (screenName) => {
         case "chatPage":
             if (app) {
                 app.innerHTML = components.chatPage;
+                document.getElementById("conversation-name").innerText = model.loggedUser.displayName + " chat with Chat Bot";
+            }
+            
+            // add message form listener
+            const messageForm = document.getElementById('message-form');
+            if (messageForm) {
+                messageForm.addEventListener("submit", (event) => {
+                    event.preventDefault();
+
+                    const messageContainer = document.getElementById("message-container");
+                    if (messageContainer) {
+                        view.sendMessage("", messageForm.message.value);
+                        view.sendMessage("Chat Bot", messageForm.message.value);
+                        /* const newMessage = messageForm.message.value;
+                        const messageElement = document.createElement("div");
+                        messageElement.innerText = newMessage;
+                        messageContainer.appendChild(messageElement);
+                        messageForm.message.value = "";  */
+                    }
+                })
             }
             break;
         case "resetPasswordPage":
@@ -122,3 +142,59 @@ view.clearRegisterInfo = () => {
         registerForm.confirmPassword.value = "";
     }
 };
+
+view.addMessage = (messageObject) => {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('message-container');
+
+    const message = document.createElement('div');
+    message.classList.add('message');
+    message.innerText = messageObject.content;
+
+    if (messageObject.user === model.authUser.email) {
+      messageContainer.classList.add('your');
+    } else {
+      const sender = document.createElement('div');
+      sender.classList.add('sender');
+      sender.innerText = messageObject.user;
+      messageContainer.appendChild(sender);
+    }
+
+    messageContainer.appendChild(message);
+    document.getElementById('conversation-messages').appendChild(messageContainer);
+  };
+
+  view.sendMessage = (sender, messageContent) => {
+    const messageContainer = document.getElementById("message-container");
+    if (messageContainer) {
+        // create 3 div elêmnt
+        const messageItem = document.createElement("div");
+        const senderElement = document.createElement("div");
+        const messageContentElement = document.createElement("div");
+
+        // modify div.message-item
+        messageItem.classList.add("message-item");
+        if (sender) {
+            messageItem.classList.add("other-message")
+        } else {
+            messageItem.classList.add("my-message");
+        }
+
+         // modify div.sender
+        senderElement.classList.add("sender");
+        if (sender) {
+            senderElement.innerText = sender; 
+        }
+        
+         // modify div.message-content
+        messageContentElement.classList.add("message-content");
+        messageContentElement.innerText = messageContent;
+
+        // assemple
+        messageItem.appendChild(senderElement);
+        messageItem.appendChild(messageContentElement);
+
+        // append
+        messageContainer.appendChild(messageItem);
+    }
+  };

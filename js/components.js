@@ -95,7 +95,37 @@ components.resetPasswordPage = `
 `;
 
 components.chatPage = `
-<div id="animationload" class="animationload">
-        <div id="osahanloading" class="osahanloading"></div>
+<div class='chat-container'>
+    <div class='header'>
+      Chat App
     </div>
+    <div class='main'>
+      <div class='conversation-detail'>
+        <div id='conversation-name' class='conversation-header'>
+          Hải Sơn Nguyễn
+        </div>
+        <div class='conversation-messages' id='conversation-messages'>
+            <div class="message-container" id="message-container">
+                <div class="message-item my-message">
+                    <div class="sender"></div>
+                    <div class="message-content">
+                    </div>
+                </div>
+                    <div class="message-item other-message">
+                        <div class="sender"></div>
+                        <div class="message-content">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <form name='message-form' id='message-form'>
+        
+          <div class='conversation-input'>
+            <input id='message-input' name='message' placeholder='Type a message ...'></input>
+            <button class='button' type='submit'>Send</button>
+          </div>
+        <form>
+      </div>
+    </div>
+  </div>
 `;
