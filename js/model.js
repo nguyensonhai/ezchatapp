@@ -118,7 +118,7 @@ model.loadConversations = () => {
                     if (newMessage.user === model.loggedUser.email){
                         view.sendMessage("",newMessage.content);
                     } else {
-                        view.sendMessage(newMessage.displayName, newMessage.content)
+                        view.sendMessage(newMessage.user, newMessage.content)
                     }
                 }
             } else {

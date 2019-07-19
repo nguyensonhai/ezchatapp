@@ -4,11 +4,10 @@
 }
 
 .register-form-container{
-    margin-left: 65%;
     padding-top: 50px;
     background-color: white;
     opacity: 0.8;
-    width: 35%;
+    width: 450px;
     height:100vh;
     padding-left: 40px;
 }

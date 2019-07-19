@@ -1,9 +1,8 @@
 
 .login-form-container{
-    margin-left: 65%;
     background-color: white;
     opacity: 0.8;
-    width: 35%;
+    width: 450px;
     height:100vh;
     padding-left: 40px;
 }
