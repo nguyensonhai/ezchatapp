@@ -74,6 +74,7 @@
   padding: 4px;
   display: inline-block;
   max-width: 40%;
+  word-break: break-word;
 }
 
 .my-message {
