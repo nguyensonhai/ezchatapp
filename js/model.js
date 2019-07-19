@@ -85,7 +85,8 @@ model.saveMessage = (newMessageContent) => {
     const newMessage = {
         content: newMessageContent,
         user: model.loggedUser.email,
-        createdAt: new Date()
+        createdAt: new Date(),
+        displayName: model.loggedUser.displayName
     }
     const db = firebase.firestore();
     db.collection("conversations")
@@ -117,7 +118,7 @@ model.loadConversations = () => {
                     if (newMessage.user === model.loggedUser.email){
                         view.sendMessage("",newMessage.content);
                     } else {
-                        view.sendMessage(newMessage.user, newMessage.content)
+                        view.sendMessage(newMessage.displayName, newMessage.content)
                     }
                 }
             } else {
@@ -129,7 +130,7 @@ model.loadConversations = () => {
                         if (mess.user === model.loggedUser.email) {
                             view.sendMessage("", mess.content);
                         } else {
-                            view.sendMessage(mess.user, mess.content);
+                            view.sendMessage(mess.displayName, mess.content);
                         }
                     });
                 }
