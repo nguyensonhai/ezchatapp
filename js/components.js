@@ -106,16 +106,6 @@ components.chatPage = `
         </div>
         <div class='conversation-messages' id='conversation-messages'>
             <div class="message-container" id="message-container">
-                <div class="message-item my-message">
-                    <div class="sender"></div>
-                    <div class="message-content">
-                    </div>
-                </div>
-                    <div class="message-item other-message">
-                        <div class="sender"></div>
-                        <div class="message-content">
-                        </div>
-                    </div>
             </div>
         </div>
         <form name='message-form' id='message-form'>
