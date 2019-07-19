@@ -112,7 +112,7 @@ model.loadConversations = () => {
                 if (newMessage.users === model.loggedUser.email){
                     view.sendMessage("",newMessage.content);
                 } else {
-                    view.sendMessage(newMessage.user, newMessage.content)
+                    view.sendMessage(newMessage.users, newMessage.content)
                 }
             }
         });
