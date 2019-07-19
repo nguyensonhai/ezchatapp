@@ -78,6 +78,7 @@ view.setActiveScreen = (screenName) => {
                     if (messageContainer) {
                         view.sendMessage("", messageForm.message.value);
                         view.sendMessage("Chat Bot", messageForm.message.value);
+                        messageForm.message.value = '';
                         /* const newMessage = messageForm.message.value;
                         const messageElement = document.createElement("div");
                         messageElement.innerText = newMessage;
@@ -194,7 +195,7 @@ view.addMessage = (messageObject) => {
         messageItem.appendChild(senderElement);
         messageItem.appendChild(messageContentElement);
 
-        // append
+        // append to mesage-container
         messageContainer.appendChild(messageItem);
     }
   };
