@@ -109,10 +109,10 @@ model.loadConversations = () => {
             if (activeConversation) {
                 // render message
                 const newMessage = activeConversation.messages[activeConversation.messages.length - 1]
-                if (newMessage.users === model.loggedUser.email){
+                if (newMessage.user === model.loggedUser.email){
                     view.sendMessage("",newMessage.content);
                 } else {
-                    view.sendMessage(newMessage.users, newMessage.content)
+                    view.sendMessage(newMessage.user, newMessage.content)
                 }
             }
         });
