@@ -65,8 +65,11 @@ view.setActiveScreen = (screenName) => {
         case "chatPage":
             if (app) {
                 app.innerHTML = components.chatPage;
-                document.getElementById("conversation-name").innerText = model.loggedUser.displayName + " chat with Chat Bot";
+                document.getElementById("conversation-name").innerText = model.loggedUser.displayName;
             }
+
+            // load all conversations
+            model.loadConversations();
             
             // add message form listener
             const messageForm = document.getElementById('message-form');
@@ -76,14 +79,9 @@ view.setActiveScreen = (screenName) => {
 
                     const messageContainer = document.getElementById("message-container");
                     if (messageContainer && messageForm.message.value) {
-                        view.sendMessage("", messageForm.message.value);
-                        view.sendMessage("Chat Bot", messageForm.message.value);
+                        // save to database
+                        model.saveMessage(messageForm.message.value);
                         messageForm.message.value = '';
-                        /* const newMessage = messageForm.message.value;
-                        const messageElement = document.createElement("div");
-                        messageElement.innerText = newMessage;
-                        messageContainer.appendChild(messageElement);
-                        messageForm.message.value = "";  */
                     }
                 })
             }
