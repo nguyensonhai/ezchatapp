@@ -2,6 +2,8 @@ const model = {};
 
 model.loggedUser = undefined;
 
+model.conversations = undefined;
+
 model.loginUser = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((loginResult) => {
@@ -106,14 +108,32 @@ model.loadConversations = () => {
             });
 
             const activeConversation = conversations[0];
-            if (activeConversation) {
-                // render message
-                const newMessage = activeConversation.messages[activeConversation.messages.length - 1]
-                if (newMessage.user === model.loggedUser.email){
-                    view.sendMessage("",newMessage.content);
-                } else {
-                    view.sendMessage(newMessage.user, newMessage.content)
+
+            if (model.conversations) {
+                // render last message
+                if (activeConversation) {
+                    // render message
+                    const newMessage = activeConversation.messages[activeConversation.messages.length - 1]
+                    if (newMessage.user === model.loggedUser.email){
+                        view.sendMessage("",newMessage.content);
+                    } else {
+                        view.sendMessage(newMessage.user, newMessage.content)
+                    }
+                }
+            } else {
+                // render all message
+                model.conversations = conversations;
+
+                if(activeConversation) {
+                    activeConversation.messages.forEach((mess) => {
+                        if (mess.user === model.loggedUser.email) {
+                            view.sendMessage("", mess.content);
+                        } else {
+                            view.sendMessage(mess.user, mess.content);
+                        }
+                    });
                 }
             }
+
         });
 };

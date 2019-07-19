@@ -195,5 +195,8 @@ view.addMessage = (messageObject) => {
 
         // append to mesage-container
         messageContainer.appendChild(messageItem);
+
+        //scroll
+        messageContainer.scrollIntoView(false);
     }
   };
