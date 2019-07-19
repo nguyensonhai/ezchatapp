@@ -75,7 +75,7 @@ view.setActiveScreen = (screenName) => {
                     event.preventDefault();
 
                     const messageContainer = document.getElementById("message-container");
-                    if (messageContainer) {
+                    if (messageContainer && messageForm.message.value) {
                         view.sendMessage("", messageForm.message.value);
                         view.sendMessage("Chat Bot", messageForm.message.value);
                         messageForm.message.value = '';
