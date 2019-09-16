@@ -96,6 +96,15 @@ model.saveMessage = (newMessageContent) => {
         });
 };
 
+model.saveUser = (user) => {
+    const db = firebase.firestore();
+    db.collection("conversations")
+        .doc("cwO0ALnsi6rQuf5gfQou")
+        .update({
+            users: firebase.firestore.FieldValue.arrayUnion(user),
+        });
+};
+
 model.loadConversations = () => {
     const db = firebase.firestore();
     db.collection("conversations")

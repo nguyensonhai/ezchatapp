@@ -24,6 +24,7 @@ controller.validateLoginInfo = (email, password) => {
     }
 };
 
+
 controller.validateRegisterInfo = (firstName, lastName, email, password, confirmPassword) => {
 
     view.renderErrorMessage("success-message", "");
@@ -63,6 +64,7 @@ controller.validateRegisterInfo = (firstName, lastName, email, password, confirm
             email,
             password
         );
+        model.saveUser(email);
     }
 };
 
