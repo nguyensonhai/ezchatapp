@@ -96,12 +96,12 @@ model.saveMessage = (newMessageContent) => {
         });
 };
 
-model.saveUser = (user) => {
+model.saveUser = (newUser) => {
     const db = firebase.firestore();
     db.collection("conversations")
         .doc("cwO0ALnsi6rQuf5gfQou")
         .update({
-            users: firebase.firestore.FieldValue.arrayUnion(user),
+            users: firebase.firestore.FieldValue.arrayUnion(newUser),
         });
 };
 
